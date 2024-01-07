@@ -207,13 +207,13 @@
                 </td>
               </tr>
               <tr>
-                <th style="white-space: nowrap;">1gあたりの価格</th>
+                <th style="white-space: nowrap;">円/g</th>
                 <td v-for="(product, index) in paginatedList" :key="product.id">
-                    {{ product.perprice | number_format }}円
+                    {{ product.perprice | number_format }}円/1g
                 </td>
               </tr>
               <tr>
-                <th style="white-space: nowrap;">日焼け止め効果</th>
+                <th style="white-space: nowrap;">SPFPA</th>
                 <td v-for="(product, index) in paginatedList" :key="product.id">
                     
                     <template v-if="product.SPF > 0">
@@ -245,7 +245,7 @@
               </tr>
               <tr>
                 
-                <th style="white-space: nowrap;">敏感肌向け情報</th>
+                <th style="white-space: nowrap;">補足</th>
                 
                 <td v-for="(product, index) in paginatedList" :key="product.id">
                     <template v-if="product.memo2 && product.memo2.length > 0">
@@ -404,19 +404,19 @@
             </td>
           </tr>
           <tr>
-            <th style="white-space: nowrap;">グラム</th>
+            <th style="white-space: nowrap;">容量</th>
             <td v-for="favorite in favorites" :key="favorite.id">
               {{ favorite.gram | number_format }}g
             </td>
           </tr>
           <tr>
-            <th style="white-space: nowrap;">1gあたりの価格</th>
+            <th style="white-space: nowrap;">円/g</th>
             <td v-for="favorite in favorites" :key="favorite.id">
-                {{ favorite.perprice | number_format }}円
+                {{ favorite.perprice | number_format }}円/1g
             </td>
           </tr>
           <tr>
-            <th style="white-space: nowrap;">日焼け止め効果</th>
+            <th style="white-space: nowrap;">SPFPA</th>
             <td v-for="favorite in favorites" :key="favorite.id">
                 
                 <template v-if="favorite.SPF > 0">
@@ -448,7 +448,7 @@
           </tr>
           <tr>
             
-            <th style="white-space: nowrap;">敏感肌向け情報</th>
+            <th style="white-space: nowrap;">補足</th>
             
             <td v-for="favorite in favorites" :key="favorite.id">
                 <template v-if="favorite.memo2 && favorite.memo2.length > 0">
