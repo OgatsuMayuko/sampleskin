@@ -114,7 +114,8 @@
                 <th  style="white-space: nowrap;">画像</th>
           <td v-for="(product, index) in paginatedList" :key="product.id">
             
-            <img v-bind:src="product.img" alt="">
+            <img v-bind:src="product.img"  alt="" style="max-width: 100%;">
+          </td>
             
            
             
@@ -520,12 +521,3 @@
     
                 
                 
-                
-                
-                
-                
-
-
-
-
-
