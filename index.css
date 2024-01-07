@@ -3,10 +3,15 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Yu Gothic', 'メイリオ', sans-serif;
+    font-family: 'メイリオ','Yu Gothic',  sans-serif;
+    font-weight: 200;
     /*font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Yu Gothic", YuGothic, sans-serif;*/
     /*font-family: 'Raleway', sans-serif;*/
   }
+  @media only screen and (max-width: 767px) {
+    body {
+      font-size: 14px;
+    }
   img, div,h2,li,a,fieldset /* 他の要素も追加 */ {
     display: block;
     margin-bottom: 10px; /* 必要に応じて適切なマージンを設定 */
@@ -15,8 +20,9 @@ body {
     border: 1.5px solid #000000b0;
     font-size: 100%;
     padding: 20px;
+    width: fit-content;
     margin: 0 auto;
-    display: inline-block;
+    
   }
   .anim-box {
     position: relative;
@@ -475,10 +481,10 @@ img {
 
 
 .centered-box {
-  width: 500px;
+  width: fit-content; /* または必要に応じて適切な幅を指定 */
   border: 1px solid #000;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-}
+}}
