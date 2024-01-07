@@ -95,7 +95,12 @@
           
         </div>
       </div>
- 
+      <div class="pagination">
+        <button @click="prevPage" :disabled="currentPage === 1" class="Button-style">前へ</button>
+        <span>{{ currentPage }} / {{ totalPages }}</span>
+        <button @click="nextPage" :disabled="currentPage === totalPages" class="Button-style">次へ</button>
+        結果 <span class="count">{{ filleredList.length }}件</span>
+      </div>
       <!--商品一覧-->
  
         <tbody>
