@@ -1,0 +1,670 @@
+@charset "UTF-8";
+
+body {
+  margin: 0;
+    padding: 0;
+  background-color: #ffffff;
+  color: #000000;
+  font-family: 'Yu Gothic', 'メイリオ', sans-serif;
+}
+img, div /* 他の要素も追加 */ {
+  display: block;
+  margin-bottom: 10px; /* 必要に応じて適切なマージンを設定 */
+}
+.anim-box {
+  position: relative;
+  animation: fadeIn 3.7s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+  background: linear-gradient(to right, #c32d806b 0%,#c32d80 50%, #c32d806b 100%);
+  border-radius: 5px;
+  /*max-width: 1000px;*/
+  height: 90px;
+}
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+.imgicon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.cp_ipselect {
+  
+  overflow: hidden;
+  width: 90%;
+  margin: 2em auto;
+  text-align: center;
+}
+.cp_ipselect select {
+  width: 100%;
+  padding-right: 1em;
+  cursor: pointer;
+  text-indent: 0.01px;
+  text-overflow: ellipsis;
+  border: none;
+  outline: none;
+  background: transparent;
+  background-image: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.cp_ipselect select::-ms-expand {
+    display: none;
+}
+.cp_ipselect.cp_sl01 {
+  position: relative;
+  border-radius: 2px;
+  border: 2px solid #c71585;
+  border-radius: 50px;
+  background: #ffffff;
+}
+.cp_ipselect.cp_sl01::before {
+  position: absolute;
+  top: 0.8em;
+  right: 0.8em;
+  width: 0;
+  height: 0;
+  padding: 0;
+  content: '';
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #c71585;
+  pointer-events: none;
+}
+.cp_ipselect.cp_sl01 select {
+  padding: 8px 38px 8px 8px;
+  color: black;
+}
+.boxes {
+  margin: 5px;
+  padding: 50px;
+  width: 500px;
+  border: 1px solid #000;
+}
+:root {
+  --primary: #000000;
+  --secondary: #ffffff;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+body {
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  margin: 0;
+  color: var(--primary);
+  background: var(--secondary);
+}
+/* Hide inputs */
+input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.group {
+  display: flex;
+  align-items: center;
+}
+/* Styles */
+label {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+  padding: 1rem 1rem 1rem 2rem;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.25, 0.25, 0.5, 1.9);
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: transparent;
+    border: 2px solid;
+    border-radius: 0.25rem;
+    z-index: -1;
+    transition: all 0.25s cubic-bezier(0.25, 0.25, 0.5, 1.9);
+    input[type="radio"] + & {
+      border-radius: 2rem;
+    }
+  }
+}
+/* Checked */
+input:checked + label {
+  padding-left: 1em;
+  color: var(--secondary);
+  &::before {
+    width: 100%;
+    height: 100%;
+    background: var(--primary);
+    border: 0;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+  }
+}
+
+.pegenation li {display: inline;
+  padding:10px 15px;
+  border:1px #ccc solid;color:#000053;
+  border-radius: 5px / 5px;}
+  .example2 .this {background-color:#777;color:#fff;}
+  .Button-style {
+    font-size: 10px;
+    display: inline-block;
+    background: #ffffff;
+    color: #c71585;
+    width: 40px;
+    height: 40px;
+    border: double #c71585;
+    border-radius: 50%;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
+    }
+  .navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 88px;
+    padding: 0 32px;
+    background-color: #F4BFC8;
+  }
+  .navigation_list {
+    display: flex;
+    gap: 0 32px;
+    font-size: 18px;
+    list-style: none;
+  }
+  
+  .bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  
+.container {
+  /*width: 960px;
+  margin: 0px auto;*/
+  width: 90%;
+  margin: 0 auto;
+}
+.spot{
+  animation: zoomIn 3.7s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+  text-align: center;
+  color: #0f0f0f ;
+  font-size: 30px;
+  width: 90%;
+  margin: 0 auto;
+}
+.line {
+   animation: zoomIn 6.7s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+  background: linear-gradient(to right, #c32d80 0%,#c32d80 50%, #c32d80 100%);
+  border-radius: 0.1px;
+  /*max-width: 1000px;*/
+  height: 2px;
+  width: 90%;
+  margin: 0 auto;
+}
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+.pageTitle {
+  font-weight: normal;
+  border-bottom: 2px solid;
+}
+
+.search {
+  display: flex;
+  /*justify-content: space-between;*/
+  justify-content: center; /* 水平方向に中央揃え */
+  
+}
+
+.target, .sort {
+  display: inline-block;
+}
+
+.target label {
+  margin-right: 15px;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start; /* 修正：上寄せにする */
+  text-align: left;
+}
+
+.list::after {
+  content: "";
+  display: block;
+  width: 250px;
+}
+.row {
+  display: flex;
+  align-items: stretch;
+  width: 30%; 
+  box-sizing: border-box;
+}
+
+.item {
+  flex: 0 1 250px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+  text-align: left; /* 追加：アイテムも左寄せにする */
+}
+
+.image {
+  
+  position: relative;
+  text-align: center;
+}
+
+.image img {
+  width: 150px;
+  height: 150px;
+}
+.kinou_flexbox{
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+   align-items: flex-start;
+}
+.kinou0 {
+  /*position: absolute;*/
+  border-radius: 50%;
+  width: 10em;
+  height: 5em;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color:  #CAC6FF;
+  color: #000000;
+}
+
+.kinou1 {
+  /*position: absolute;*/
+  border-radius: 50%;
+  width: 10em;
+  height: 5em;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #B9ACE8;
+  color: #000000;
+}
+.kinou2 {
+  /*position: absolute;*/
+  border-radius: 50%;
+  width: 10em;
+  height: 5em;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #A791D0;
+  color: #000000;
+}
+.kinou3 {
+  /*position: absolute;*/
+  border-radius: 50%;
+  width: 10em;
+  height: 5em;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color:  #C6A2DA;
+  color: #000000;
+}
+.kinou4 {
+  /*position: absolute;*/
+  border-radius: 50%;
+  width: 10em;
+  height: 5em;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #E4B2E4;
+  color: #000000;
+}
+.kinou5 {
+  /*position: absolute;*/
+  border-radius: 50%;
+  width: 10em;
+  height: 5em;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #EBC6EB;
+  color: #000000;
+}
+.kinou6 {
+  /*position: absolute;*/
+  border-radius: 50%;
+  width: 10em;
+  height: 5em;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F2D9F2;
+  color: #000000;
+}
+.kinou7 {
+  /*position: absolute;*/
+  border-radius: 50%;
+  width: 10em;
+  height: 5em;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F3CEE7;
+  color: #000000;
+}
+.kinou8 {
+  /*position: absolute;*/
+  border-radius: 50%;
+  width: 10em;
+  height: 5em;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #A8BBF6;
+  color: #000000;
+}
+.kinou9 {
+  /*position: absolute;*/
+  border-radius: 50%;
+  width: 10em;
+  height: 5em;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #CBE2FF;
+  color: #000000;
+}
+.kinou10 {
+  /*position: absolute;*/
+  border-radius: 50%;
+  width: 10em;
+  height: 5em;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #7EAEF1;
+  color: #000000;
+}
+.kinou11 {
+  /*position: absolute;*/
+  border-radius: 50%;
+  width: 10em;
+  height: 5em;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #9ABCF2;
+  color: #000000;
+}
+.kinou12 {
+  /*position: absolute;*/
+  border-radius: 50%;
+  width: 10em;
+  height: 5em;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ACC5EC;
+  color: #000000;
+}
+.kinou13 {
+  /*position: absolute;*/
+  border-radius: 50%;
+  width: 10em;
+  height: 5em;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #9CB3D7;
+  color: #000000;
+}
+
+.jyouhou{
+  color: #000000;
+  font-size: 12px;
+  display: flex;
+
+}
+/*.allergytest {
+    position: absolute;
+    border-radius: 50%;
+    width: 4em;
+    height: 4em;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #bf0000;
+    color: #000000;
+  }*/
+
+.detail {
+  text-align: center;
+}
+
+.price {
+  display: inline-block;
+}
+
+.price span {
+  font-size: 160%;
+}
+
+.sigeki {
+  display: inline-block;
+  background-color: #eab4e0;
+  color: #ffffff;
+  
+}
+.shigeki {
+  border-radius: 50%;
+  width: 5em;
+  height: 5em;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(153, 0, 92);
+  color: #000000;
+}
+
+.none {
+  background-color: #a9337d;
+  color: #ffffff;
+}
+.readmore {
+  position: relative;
+  margin: 50px auto 0;
+  padding: 0 0 75px;
+}
+
+.readmore label {
+  position: absolute;
+  display: flex; /* display: inline-block; を display: flex; に変更 */
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  cursor: pointer;
+  z-index: 1;
+}
+
+.readmore label span {
+ /* width: 100px;  適切な幅に変更 */
+ margin: auto;
+  padding: 10px 0;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #000;
+}
+
+.readmore label::before {
+  content: '∨';
+}
+
+.readmore input[type="checkbox"]:checked ~ label::before {
+  content: '∧';
+}
+
+.readmore input[type="checkbox"] {
+  display: none;
+}
+
+.readmore-content {
+  position: relative;
+  height: 50px;
+  overflow: hidden;
+}
+
+.readmore input[type="checkbox"]:checked ~ .readmore-content {
+  height: auto;
+}
+/*.readmore {
+  position: relative;
+  margin: 50px auto 0;
+  padding: 0 0 75px;
+}
+
+.readmore label {
+  position: absolute;
+  display: inline-block;  
+  left: 50%;
+  bottom: 0;
+  margin: 0 auto;
+  width: 100px; 
+  padding: 10px 0;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #333;
+  transform: translateX(-50%);
+  cursor: pointer;
+  z-index: 1;
+}
+
+.readmore label::before {
+  content: '続きを読む';
+}
+
+.readmore input[type="checkbox"]:checked ~ label::before {
+  content: '元に戻す';
+}
+
+.readmore input[type="checkbox"] {
+  display: none;
+}
+
+.readmore-content {
+  position: relative;
+  height: 50px;
+  overflow: hidden;
+}
+
+.readmore input[type="checkbox"]:checked ~ .readmore-content {
+  height: auto;
+}
+
+.readmore input[type="checkbox"]:checked ~ .readmore-content {
+  height: auto;
+}*/
+
+.Button-okini {
+  font-family: "メイリオ", cursive;
+  font-size: 14px;
+  display: inline-block;
+  padding: 0.2em 1em 0.1em;
+  color: #fff;
+  border: solid 2px #000;
+  border-radius: 3px;
+  background-color: #000;
+  cursor: pointer;
+  
+}
+.Button-okiniclose {
+  font-family: "メイリオ", cursive;
+  font-size: 14px;
+  display: inline-block;
+  padding: 0.2em 1em 0.1em;
+  color: #000;
+  border: solid 2px #000;
+  border-radius: 3px;
+  background-color: #fff;
+  cursor: pointer;
+  
+}
+
+.return-btn {
+  margin-top: 5%;
+    margin-left: 35%;
+    margin-right: 35%;
+    width: 30%;
+    margin-bottom: 100px;
+}
+.return {
+  display: inline-block;
+  text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #c71585;
+    width: 100%;
+    padding: 10px 10px;
+    border: 1px solid #c71585 ;
+}
+
+.return:hover {
+    border: 1px solid #c71585 ;
+    background-color: #fff;
+    color: #c71585;
+    transition: 0.5s;
+}
+
+
