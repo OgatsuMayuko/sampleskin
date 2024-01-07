@@ -1,13 +1,19 @@
 @charset "UTF-8";
 
 body {
+  /*overflow-x: hidden;*/
   margin: 0;
     padding: 0;
   background-color: #ffffff;
   color: #000000;
-  font-family: 'Yu Gothic', 'メイリオ', sans-serif;
+  font-family: 'メイリオ', 'Yu Gothic', sans-serif;
+  font-weight: 200;
 }
-img, div /* 他の要素も追加 */ {
+@media only screen and (max-width: 600px) {
+  body {
+      font-size: 14px;
+  }
+img, div,li,input /* 他の要素も追加 */ {
   display: block;
   margin-bottom: 10px; /* 必要に応じて適切なマージンを設定 */
 }
@@ -85,9 +91,32 @@ img, div /* 他の要素も追加 */ {
 }
 .boxes {
   margin: 5px;
-  padding: 50px;
-  width: 500px;
+  width: 100%; /* ボックスの幅を100%に変更 */
+  padding: 20px; /* 適切なパディングを設定 */
   border: 1px solid #000;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+td {
+  padding: 9px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+th {
+  padding: 4px;      /* パディングを少なめに調整 */
+  border: 1px solid #ddd;
+  font-size: 8px;
+  font-weight: normal; /* フォントを太字に設定 */
+  text-align:left; /* 文字を中央寄せに設定 */
+}
+
+img {
+  max-width: 100%; /* 画像が親要素に収まるようにする */
+  height: auto;    /* アスペクト比を維持しながらサイズを調整 */
 }
 :root {
   --primary: #000000;
@@ -202,14 +231,14 @@ input:checked + label {
 .container {
   /*width: 960px;
   margin: 0px auto;*/
-  width: 90%;
+  width: 100%; /* コンテナの幅を100%に変更 */
   margin: 0 auto;
 }
 .spot{
   animation: zoomIn 3.7s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
   text-align: center;
   color: #0f0f0f ;
-  font-size: 30px;
+  font-size: 16px;
   width: 90%;
   margin: 0 auto;
 }
@@ -568,54 +597,6 @@ input:checked + label {
 .readmore input[type="checkbox"]:checked ~ .readmore-content {
   height: auto;
 }
-/*.readmore {
-  position: relative;
-  margin: 50px auto 0;
-  padding: 0 0 75px;
-}
-
-.readmore label {
-  position: absolute;
-  display: inline-block;  
-  left: 50%;
-  bottom: 0;
-  margin: 0 auto;
-  width: 100px; 
-  padding: 10px 0;
-  color: #fff;
-  text-align: center;
-  border-radius: 5px;
-  background-color: #333;
-  transform: translateX(-50%);
-  cursor: pointer;
-  z-index: 1;
-}
-
-.readmore label::before {
-  content: '続きを読む';
-}
-
-.readmore input[type="checkbox"]:checked ~ label::before {
-  content: '元に戻す';
-}
-
-.readmore input[type="checkbox"] {
-  display: none;
-}
-
-.readmore-content {
-  position: relative;
-  height: 50px;
-  overflow: hidden;
-}
-
-.readmore input[type="checkbox"]:checked ~ .readmore-content {
-  height: auto;
-}
-
-.readmore input[type="checkbox"]:checked ~ .readmore-content {
-  height: auto;
-}*/
 
 .Button-okini {
   font-family: "メイリオ", cursive;
@@ -668,3 +649,4 @@ input:checked + label {
 }
 
 
+}
