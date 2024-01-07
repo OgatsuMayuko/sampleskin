@@ -107,6 +107,7 @@ td {
   text-align: left;
 }
 th {
+  width: 200px;
   padding: 4px;      /* パディングを少なめに調整 */
   border: 1px solid #ddd;
   font-size: 8px;
