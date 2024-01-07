@@ -2,8 +2,8 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8">
-    
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!--meta name="viewport" content="width=device-width,initial-scale=1"-->
     <title>敏感肌・疾患肌</title>
     <link rel="stylesheet" href="desert_mostsensitive.css">
 
@@ -17,22 +17,26 @@
   
   <div id="app">
     <div class="container">
-      <h1 class="spot">乾燥敏感肌・疾患肌向けの化粧下地</h1>
+      <h5 class="spot">乾燥敏感肌・疾患肌向けの化粧下地</h5>
     <div class="line"></div>
       <!--h1 class="pageTitle">乾燥敏感肌・疾患肌向けの化粧下地</h1-->
 
       <!--検索欄-->
+      <br>
+       <span>&nbsp;</span>
       <div class="pagination">
         <button @click="prevPage" :disabled="currentPage === 1" class="Button-style">前へ</button>
         <span>{{ currentPage }} / {{ totalPages }}</span>
         <button @click="nextPage" :disabled="currentPage === totalPages" class="Button-style">次へ</button>
+        結果 <span class="count">{{ filleredList.length }}件</span>
       </div>
       
       <div class="search">
-        <div class="result">
+        <!--div class="result">
           結果 <span class="count">{{ filleredList.length }}件</span>
-        </div>
-       
+        </div-->
+       <br>
+       <span>&nbsp;</span>
         <div class="sort">
             <div class="cp_ipselect cp_sl01">
             <select id="sort" class="sorting" v-model.number="sortOrder" required>
@@ -44,7 +48,8 @@
             </select>
           </div>
         </div>
-        
+        <br>
+       <span>&nbsp;</span>
           
         <div class="condition">
           <div class="target">
@@ -52,7 +57,7 @@
             
             <div class="boxes">
             
-            <h2 class="pageTitle">機能選択</h2>
+            <h4 class="pageTitle">機能選択</h4>
             <input type="checkbox" v-model="showSPFPA" name="cb" id="cb1" /><label for="cb1"> 日焼け止め効果あり</label>
             <input type="checkbox" v-model="showtuya" name="cb" id="cb2" /><label for="cb2"> つや</label>
             <input type="checkbox" v-model="showcover" name="cb" id="cb3" /><label for="cb3">カバー力重視</label>
@@ -65,7 +70,7 @@
 
             <div class="group">
             <div class="boxes">
-                <h2 class="pageTitle">各種テスト</h2>
+                <h4 class="pageTitle">各種テスト</h4>
             <input type="checkbox" v-model="showallergy" name="cb" id="cb7" /><label for="cb7">アレルギーテスト<br>（アレルギー体質の人向け）</label>
             <input type="checkbox" v-model="showpatch" name="cb" id="cb8" /><label for="cb8">パッチテスト<br>（刺激に弱い人向け）</label>
             <input type="checkbox" v-model="showcomedo" name="cb" id="cb9" /><label for="cb9">ノンコメドジェニックテスト<br>（ニキビができやすい人向け）</label>
@@ -75,7 +80,7 @@
 
             <div class="group">
             <div class="boxes">
-                <h2 class="pageTitle">肌に合わない成分</h2>
+                <h4 class="pageTitle">肌に合わない成分</h4>
             <input type="checkbox" v-model="showchemical" name="cb" id="cb11" /><label for="cb11">紫外線吸収剤</label>
             <input type="checkbox" v-model="showalcohol" name="cb" id="cb12" /><label for="cb12">アルコール・エタノール</label>
             <input type="checkbox" v-model="showpetro" name="cb" id="cb13" /><label for="cb13">界面活性剤</label>
@@ -191,7 +196,7 @@
                 </td>
               </tr>
               <tr>
-                <th style="white-space: nowrap;">グラム</th>
+                <th style="white-space: nowrap;">容量</th>
                 <td v-for="(product, index) in paginatedList" :key="product.id">
                   {{ product.gram | number_format }}g
                 </td>
@@ -284,6 +289,11 @@
         </table>
         </table>
         </table>
+        <div class="pagination">
+          <button @click="prevPage" :disabled="currentPage === 1" class="Button-style">前へ</button>
+          <span>{{ currentPage }} / {{ totalPages }}</span>
+          <button @click="nextPage" :disabled="currentPage === totalPages" class="Button-style">次へ</button>
+        </div>
         <!--h1 class="pageTitle"></h1>
         <h1 class="pageTitle"></h1-->
         <div class="line"></div>
@@ -486,11 +496,7 @@
     </table>
 </tbody>
     
-  <div class="pagination">
-    <button @click="prevPage" :disabled="currentPage === 1" class="Button-style">前へ</button>
-    <span>{{ currentPage }} / {{ totalPages }}</span>
-    <button @click="nextPage" :disabled="currentPage === totalPages" class="Button-style">次へ</button>
-  </div>
+  
 </div>
 <a class="return" href="../index.html">肌質診断にもどる</a>
 <a class="return" href="../skintype_search.html">他の肌質も見たい方はこちら</a>
