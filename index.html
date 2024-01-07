@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <!-- スマホ用にする -->
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>お肌とコスメ</title>
+  <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+  <div class="anim-box"></div>
+  <img src='IMG_0362.PNG' alt='画像' width=300px>
+
+<div class="choose_box">
+      <!-- 質問一覧 -->
+      <div class="app-theme">
+        <p>お肌とコスメ</p>
+      </div>
+      <!-- オープニング -->
+      <div id="q_01" class="fit">
+        <p>あなたのお肌に合うコスメを提案します</p>
+        <div class="parent-container">
+        
+        <h4>STEP1<br>肌質診断</h4></div>
+        <div class="parent-container">
+          <h4>STEP2<br>敏感肌診断</h4>
+          <div class="dli-chevron-down"></div>
+      </div>
+      
+      <div class="parent-container">
+        <h4>STEP3<br>肌質結果表示</h4>
+          <div class="dli-chevron-down"></div>
+      </div>
+      
+      <div class="parent-container">
+        <h4>STEP4<br>12種類肌質に合った化粧下地を表示</h4>
+          <div class="dli-chevron-down"></div>
+      </div>
+      
+   
+          <ul>
+            <li><a class="btn" href="#q_02">肌質診断START</a></li>
+            <li><a class="btn" href="skintype_search.html">診断をとばす</a></li>
+          </ul>
+      </div>
+      <!-- 質問1 -->
+      <div id="q_02" style="display: none;">
+        <p>STEP1 自分の肌質がわかりますか</p>
+        <ul>
+          <li><a class="btn" href="#q_03">わかる</a></li>
+          <li><a class="btn" href="#q_04">わからない</a></li>
+        
+        </ul>
+        
+        <a class="arrow sample5-3" href="index.html">戻る</a>
+       
+        <label for="fuel">20%完了</label>
+        <meter id="fuel" min="0" max="100" low="33" high="66" optimum="80" value="20">at 20/100</meter>
+        
+
+      </div>
+
+      <!-- 質問2-->
+      <div id="q_03" style="display: none;">
+        <p>あなたの肌質は？</p>
+        <ul>
+          <li><a class="btn" href="#q_06" data-value="x">普通肌</a></li>
+          <li><a class="btn" href="#q_07" data-value="y">乾燥肌</a></li>
+          <li><a class="btn" href="#q_08" data-value="z">混合肌</a></li>
+          <li><a class="btn" href="#q_09" data-value="w">脂性肌</a></li>
+        </ul>
+        
+        <a class="arrow sample5-3" href="index.html">診断トップへ</a>
+        <label for="fuel">40%完了</label>
+        <meter id="fuel" min="0" max="100" low="33" high="66" optimum="80" value="40">at 40/100</meter>
+       
+      </div> 
+
+      <!-- 敏感肌かどうか -->
+      <div id="q_06" style="display: none;">
+        <p>STEP2 あなたは敏感肌だと思いますか</p>
+        <h4>肌質：普通肌</h4>
+        <ul>
+          <li><a class="btn" href="#q_010">YES</a></li>
+          <li><a class="btn" href="#answer_hk">NO</a></li>
+          <li><a class="btn" href="#q_14">わからない(診断へ)</a></li>
+        </ul>
+        <a class="arrow sample5-3" href="index.html">診断トップへ</a>
+        <label for="fuel">60%完了</label>
+        <meter id="fuel" min="0" max="100" low="33" high="66" optimum="80" value="60">at 60/100</meter>
+        
+      </div>
+      <div id="q_010" style="display: none;">
+        <p>光線過敏症やアトピー性皮膚炎など、<br>
+        皮膚科で治療を必要とする皮膚疾患はありますか</p>
+        <ul>
+          <li><a class="btn" href="#answer_hbs">YES</a></li>
+          <li><a class="btn" href="#answer_hb">NO</a></li>
+        </ul>
+        <a class="arrow sample5-3" href="index.html">診断トップへ</a>
+        <label for="fuel">80%完了</label>
+        <meter id="fuel" min="0" max="100" low="33" high="66" optimum="80" value="80">at 80/100</meter>
+      </div>
+      <div id="q_07" style="display: none;">
+        <p>STEP2 あなたは敏感肌だと思いますか</p>
+        <h4>肌質：乾燥肌</h4>
+
+        <ul>
+          
+          <li><a class="btn" href="#q_011">YES</a></li>
+          <li><a class="btn" href="#answer_kk">NO</a></li>
+          <li><a class="btn" href="#q_14">わからない(診断へ)</a></li>
+        </ul>
+        <a class="arrow sample5-3" href="index.html">診断トップへ</a>
+        <label for="fuel">60%完了</label>
+        <meter id="fuel" min="0" max="100" low="33" high="66" optimum="80" value="60">at 60/100</meter>
+      </div>
+      <div id="q_011" style="display: none;">
+        <p>光線過敏症やアトピー性皮膚炎など、<br>
+        皮膚科で治療を必要とする皮膚疾患はありますか</p>
+        <ul>
+          <li><a class="btn" href="#answer_kbs">YES</a></li>
+          <li><a class="btn" href="#answer_kb">NO</a></li>
+        </ul>
+        <a class="arrow sample5-3" href="index.html">診断トップへ</a>
+        <label for="fuel">80%完了</label>
+        <meter id="fuel" min="0" max="100" low="33" high="66" optimum="80" value="80">at 80/100</meter>
+      </div>
+      <div id="q_08" style="display: none;">
+        <p>STEP2 あなたは敏感肌だと思いますか</p>
+        <h4>肌質：混合肌</h4>
+
+        <ul>
+          <li><a class="btn" href="#q_012">YES</a></li>
+          <li><a class="btn" href="#answer_ck">NO</a></li>
+          <li><a class="btn" href="#q_14">わからない(診断へ)</a></li>
+        </ul>
+        <a class="arrow sample5-3" href="index.html">診断トップへ</a>
+        <label for="fuel">60%完了</label>
+        <meter id="fuel" min="0" max="100" low="33" high="66" optimum="80" value="60">at 60/100</meter>
+      </div>
+      <div id="q_012" style="display: none;">
+        <p>光線過敏症やアトピー性皮膚炎など、<br>
+        皮膚科で治療を必要とする皮膚疾患はありますか</p>
+        <ul>
+          <li><a class="btn" href="#answer_cbs">YES</a></li>
+          <li><a class="btn" href="#answer_cb">NO</a></li>
+        </ul>
+        <a class="arrow sample5-3" href="index.html">診断トップへ</a>
+        <label for="fuel">80%完了</label>
+        <meter id="fuel" min="0" max="100" low="33" high="66" optimum="80" value="80">at 80/100</meter>
+      </div>
+      <div id="q_09" style="display: none;">
+        <p>STEP2 あなたは敏感肌だと思いますか</p>
+        <h4>肌質：脂性肌</h4>
+
+        <ul>
+          <li><a class="btn" href="#q_013">YES</a></li>
+          <li><a class="btn" href="#answer_sk">NO</a></li>
+          <li><a class="btn" href="#q_14">わからない(診断へ)</a></li>
+        </ul>
+        <a class="arrow sample5-3" href="index.html">診断トップへ</a>
+        <label for="fuel">60%完了</label>
+        <meter id="fuel" min="0" max="100" low="33" high="66" optimum="80" value="60">at 60/100</meter>
+      </div>
+      <div id="q_013" style="display: none;">
+        <p>光線過敏症やアトピー性皮膚炎など、<br>
+        皮膚科で治療を必要とする皮膚疾患はありますか</p>
+        <ul>
+          <li><a class="btn" href="#answer_sbs">YES</a></li>
+          <li><a class="btn" href="#answer_sb">NO</a></li>
+        </ul>
+        <a class="arrow sample5-3" href="index.html">診断トップへ</a>
+        <label for="fuel">80%完了</label>
+        <meter id="fuel" min="0" max="100" low="33" high="66" optimum="80" value="80">at 80/100</meter>
+      </div>
+          <!-- 質問A水分量 -->
+          
+          <div id="q_04"  style="display: none;">
+            <p>水分量チェック</p>
+            <p>当てはまるものすべて選択してください。</p>
+            <ul>
+                <li><input id="q_04" type="checkbox" value="e" data-value="e">日中、肌がつっぱることがある</li>
+                <li><input id="q_04" type="checkbox" value="e" data-value="e">口や目の周りがかさかさしやすい</li>
+                <li><input id="q_04" type="checkbox" value="e" data-value="e">化粧ノリが悪く、粉っぽく仕上がる</li>
+                <li><input id="q_04" type="checkbox" value="e" data-value="e">肌のきめは細かい方だ</li>
+                <li><input id="q_04" type="checkbox" value="g" data-value="g">うるおいがあり特に乾燥しない</li>
+                <li><a class="btn" href="#q_05">次へ</a></li>
+          </ul>
+          <a class="arrow sample5-3" href="index.html">診断トップへ</a>
+          <label for="fuel_a">35%完了</label>
+  <meter id="fuel_a" min="0" max="100" low="33" high="66" optimum="80" value="35">at 35/100</meter>
+          </div>
+    
+          <!-- 質問B皮脂量 -->
+          <div id="q_05" style="display: none;">
+            <p>皮脂量チェック</p>
+            <p>当てはまるものすべて選択してください。</p>
+            <ul>
+              <li><input id="q_05" type="checkbox" value="f" data-value="f">日中、肌のテカリが気になる</li>
+                <li><input id="q_05" type="checkbox" value="f" data-value="f">油とり紙で皮脂を度々とらなければならない</li>
+                <li><input id="q_05" type="checkbox" value="f" data-value="f">化粧が消えたり、沈んだりするくずれ方である</li>
+                <li><input id="q_05" type="checkbox" value="f" data-value="f">頬の毛穴が大きく、目立つほうだ</li>
+                <li><input id="q_05" type="checkbox" value="f" data-value="f">額や頬にニキビができやすい</li>
+                <li><input id="q_05" type="checkbox" value="h" data-value="h">肌のテカリや皮脂の多さが気になることはない</li>
+                <li><a class="btn end-q_05" >完了</a></li>
+
+            </ul>
+            <a class="arrow sample5-3" href="index.html">診断トップへ</a>
+            <!--label for="fuel">Fuel level:</label>
+        <meter id="fuel" min="0" max="100" low="33" high="66" optimum="80" value="35">at 35/100</meter-->
+          <label for="fuel_b">40%完了</label>
+          <meter id="fuel_b" min="0" max="100" low="33" high="66" optimum="80" value="40">at 40/100</meter>
+          </div>
+          
+
+      <!-- 敏感肌診断 -->
+      <div id="q_14" style="display: none;">
+        <p>STEP2:敏感肌判断<br>当てはまるものをすべて選んでください。</p>
+        <ul>
+          <li><input type="checkbox" data-value="a">光線過敏症</li>
+          <li><input type="checkbox" data-value="a">アトピー性皮膚炎</li>
+          <li><input type="checkbox" data-value="a">その他皮膚科で治療を必要とする皮膚疾患のある方</li>  
+          <li><input type="checkbox" data-value="b">乾燥している時期に体中がかゆくなり掻いてしまう</li>
+          <li><input type="checkbox" data-value="b">乾燥している時期にだけ、フケや頭の痒みが気になる</li>
+          <li><input type="checkbox" data-value="b">紫外線で皮膚トラブルを起こしやすい</li>
+          <li><input type="checkbox" data-value="b">化粧品など外用剤で皮膚トラブルを起こしやすい</li>
+          <li><input type="checkbox" data-value="b">外気中のほこりに皮膚トラブルを起こしやすい</li>
+          <li><input type="checkbox" data-value="c">体調の変化やストレスに敏感に反応する</li>
+          <li><input type="checkbox" data-value="c">冷暖房などの環境や花粉など季節的要因に敏感</li>
+          <li><input type="checkbox" data-value="d">キメが整っていて潤いがあり、はりつや弾力がある</li>  
+          <li><input type="checkbox" data-value="d">肌について特に気になることはない</li>  
+          <li><a class="btn end-result">診断結果を表示</button></li>
+        </ul>
+        <a class="arrow sample5-3" href="index.html">診断トップへ</a>
+        <label for="fuel">80%完了</label>
+        <meter id="fuel" min="0" max="100" low="33" high="66" optimum="80" value="80">at 80/100</meter>
+      </div>
+    </div>
+
+<!-- 以下回答 -->
+  <!-- 回答の答え乾燥 -->
+  <div id="answer_kb" class="result" style="display: none;">
+    <div class="result_theme ">
+      <p>あなたのお肌は</p>
+      </div>
+      <div class="result_type0 ">
+            <h5>乾燥肌×敏感肌</h5>
+      </div>
+      <div class="result_discription0">
+        <h2>かさかさしていて荒れやすく、<br>敏感なお肌です。</h2>
+       <div class="return-btn">
+        <a class="return" href="result/desert_sensitive.html">おすすめ化粧下地はこちら</a>
+        <a class="return" href="index.html">診断にもどる</a>
+        
+       </div>
+     </div>
+     </div>
+  <div id="answer_kk" class="result" style="display: none;">
+    <div class="result_theme ">
+      <p>あなたのお肌は</p>
+      </div>
+      <div class="result_type0 ">
+            <h5>乾燥肌×健常肌</h5>
+      </div>
+      <div class="result_discription0">
+        <h2>かさかさしていて<br>荒れやすいお肌です。</h2>
+       <div class="return-btn">
+        <a class="return" href="result/desert.html">おすすめ化粧下地はこちら</a>
+        <a class="return" href="index.html">診断にもどる</a>
+       </div>
+     </div>
+     </div>
+
+       <div id="answer_kbs" class="result" style="display: none;">
+    <div class="result_theme ">
+      <p>あなたのお肌は</p>
+      </div>
+      <div class="result_type0 ">
+            <h5>乾燥敏感肌×疾患肌</h5>
+      </div>
+      <div class="result_discription0">
+        <h2>かさかさしていて荒れやすく、<br>とても敏感なお肌です。</h2>
+       
+        <p>症状の再発防止のため、<br>適切なスキンケアを心がけましょう</p>
+       <div class="return-btn">
+        <a class="return" href="result/desert_mostsensitive5.html">おすすめ化粧下地はこちら</a>
+        <a class="return" href="index.html">診断にもどる</a>
+        
+      </div>
+     </div>
+     </div>
+      <!-- 回答の答え普通 -->
+     <div id="answer_hb" class="result"  style="display: none;">
+      <div class="result_theme ">
+            <p>あなたの肌質は</p>
+      </div>
+      <div class="result_type1 ">
+            <h5>普通肌×敏感肌</h5>
+      </div>
+      <div class="result_discription2">
+        <h2>うるおいはあるけど変化しやすく、<br>敏感なお肌です。</h2>
+      </div>
+       <div class="return-btn">
+        <a class="return" href="result/nomal_sensitive.html">おすすめ化粧下地はこちら</a>
+        <a class="return" href="index.html">肌質診断にもどる</a>
+       </div>
+     </div>
+     <div id="answer_hk" class="result"  style="display: none;">
+      <div class="result_theme ">
+            <p>あなたの肌質は</p>
+      </div>
+      <div class="result_type1 ">
+            <h5>普通肌×健常肌</h5>
+      </div>
+      <div class="result_discription2">
+        <h2>うるおいはあるけど<br>変化しやすいお肌です。</h2>
+      </div>
+       <div class="return-btn">
+        <a class="return" href="result/nomal.html">おすすめ化粧下地はこちら</a>
+        <a class="return" href="index.html">肌質診断にもどる</a>
+       </div>
+     </div>
+     
+     <div id="answer_hbs" class="result"  style="display: none;">
+      <div class="result_theme ">
+            <p>あなたの肌質は</p>
+      </div>
+      <div class="result_type1 ">
+            <h5>普通敏感肌×疾患肌</h5>
+      </div>
+      <div class="result_discription2">
+        <h2>うるおいはあるけど変化しやすく、<br>皮膚科での治療が必要なお肌です。</h2>
+      
+        <p>症状の再発防止のため、<br>適切なスキンケアを心がけましょう</p>
+      
+       <div class="return-btn">
+        <a class="return" href="result/nomal_mostsensitive.html">おすすめ化粧下地はこちら</a>
+        <a class="return" href="index.html">肌質診断にもどる</a>
+      </div> 
+      </div>
+     </div>
+
+<!-- 回答の答え混合 -->
+     <div id="answer_cb" class="result" style="display: none;">
+      <div class="result_theme ">
+        <p>あなたのお肌は</p>
+      </div>
+      <div class="result_type2 ">
+        <h5>混合肌×敏感肌</h5>
+      </div>
+      <div class="result_discription2">
+        <h2>脂っぽいのにかさつき、<br>敏感なお肌です。</h2>
+        <div class="return-btn">
+          <a class="return" href="result/mix_sensitive.html">おすすめ化粧下地はこちら</a>
+          <a class="return" href="index.html">診断にもどる</a>
+        </div>
+      </div>
+     </div>
+      <div id="answer_ck" class="result" style="display: none;">
+        <div class="result_theme ">
+          <p>あなたのお肌は</p>
+        </div>
+        <div class="result_type2 ">
+          <h5>混合肌×健常肌</h5>
+        </div>
+        <div class="result_discription2">
+          <h2>脂っぽいのにかさつくお肌です。</h2>
+          <div class="return-btn">
+            <a class="return" href="result/mix.html">おすすめ化粧下地はこちら</a>
+            <a class="return" href="index.html">診断にもどる</a>
+          </div>
+        </div>    
+      </div> 
+
+      <div id="answer_cbs" class="result"  style="display: none;">
+        <div class="result_theme ">
+          <p>あなたのお肌は</p>
+        </div>
+        <div class="result_type2 ">
+        <h5>混合敏感肌×疾患肌</h5>
+      </div>
+      <div class="result_discription2">
+        <h2>脂っぽいのにかさつき、<br>敏感なお肌です。</h2>
+      
+        <p>症状の再発防止のため、<br>適切なスキンケアを心がけましょう</p>
+        <div class="return-btn">
+          <a class="return" href="result/mix_mostsensitive.html">おすすめ化粧下地はこちら</a>
+          <a class="return" href="index.html">診断にもどる</a>
+        </div>
+      </div>
+ </div>
+
+         <!-- 回答の答え脂性 -->
+     <div id="answer_sb" class="result" style="display: none;">
+      <div class="result_theme ">
+        <p>あなたのお肌は</p>
+      </div>
+      <div class="result_type3">
+        <h5>脂性肌×敏感肌</h5>
+      </div>
+      <div class="result_discription3">
+        <h2>うるおいがありべたつきやすく、<br>敏感なお肌です。</h2>
+        <div class="return-btn">
+          <a class="return" href="result/oil_sensitive.html">おすすめ化粧下地はこちら</a>
+          <a class="return" href="index.html">診断にもどる</a>
+        </div>
+      </div>
+ </div>
+
+ <div id="answer_sk" class="result" style="display: none;">
+  <div class="result_theme ">
+    <p>あなたのお肌は</p>
+  </div>
+  <div class="result_type3">
+    <h5>脂性肌×健常肌</h5>
+  </div>
+  <div class="result_discription3">
+    <h2>うるおいがあり<br>べたつきやすいお肌です。</h2>
+    <div class="return-btn">
+      <a class="return" href="result/oil.html">おすすめ化粧下地はこちら</a>
+      <a class="return" href="index.html">診断にもどる</a>
+
+    </div>
+  </div>
+</div>
+
+   <div id="answer_sbs" class="result" style="display: none;">
+    <div class="result_theme ">
+      <p>あなたのお肌は</p>
+    </div>
+    <div class="result_type3">
+      <h5>脂性敏感肌×疾患肌</h5>
+    </div>
+    <div class="result_discription3">
+      <h2>うるおいがありべたつきやすく、<br>敏感なお肌です。</h2>
+      <p>症状の再発防止のため、<br>適切なスキンケアを心がけましょう</p>
+    </div>
+      <div class="return-btn">
+        <a class="return" href="result/oil_mostsensitive.html">おすすめ化粧下地はこちら</a>
+        <a class="return" href="index.html">診断にもどる</a>
+      
+    </div>
+</div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+  <script type="text/javascript" src="index.js"></script>
+</body>
+</html>
+
