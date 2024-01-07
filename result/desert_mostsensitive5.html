@@ -344,9 +344,7 @@
       <th style="white-space: nowrap;">機能</th>
       <td v-for="favorite in favorites" :key="favorite.id">
                 <div class = "kinou_flexbox">
-                    <template v-if="favorite.memo2 && favorite.memo2.length > 0">
-                        <div class="shigeki none">超敏感肌</div>
-                    </template>
+
                     <template v-if="favorite.cover">
                         <div class="kinou0">カバー力</div>
                     </template>
