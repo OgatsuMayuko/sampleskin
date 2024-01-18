@@ -68,7 +68,7 @@ img, div,li,input /* 他の要素も追加 */ {
 .cp_ipselect.cp_sl01 {
   position: relative;
   border-radius: 2px;
-  border: 2px solid #c71585;
+  border: 2px solid #c32d80;
   border-radius: 50px;
   background: #ffffff;
 }
@@ -82,7 +82,7 @@ img, div,li,input /* 他の要素も追加 */ {
   content: '';
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
-  border-top: 6px solid #c71585;
+  border-top: 6px solid #c32d80;
   pointer-events: none;
 }
 .cp_ipselect.cp_sl01 select {
@@ -103,6 +103,7 @@ table {
 
 td {
   padding: 9px;
+  width: 50px;
   border: 1px solid #ddd;
   text-align: left;
 }
@@ -111,8 +112,8 @@ th {
   padding: 4px;      /* パディングを少なめに調整 */
   border: 1px solid #ddd;
   font-size: 8px;
-  font-weight: normal; /* フォントを太字に設定 */
-  text-align:left; /* 文字を中央寄せに設定 */
+  font-weight: normal;
+  text-align:left;
 }
 
 img {
@@ -191,10 +192,10 @@ input:checked + label {
     font-size: 10px;
     display: inline-block;
     background: #ffffff;
-    color: #c71585;
+    color: #c32d80;
     width: 40px;
     height: 40px;
-    border: double #c71585;
+    border: double #c32d80;
     border-radius: 50%;
     text-align: center;
     overflow: hidden;
@@ -636,16 +637,16 @@ input:checked + label {
   text-align: center;
     text-decoration: none;
     color: #fff;
-    background-color: #c71585;
+    background-color: #c32d80;
     width: 100%;
     padding: 10px 10px;
-    border: 1px solid #c71585 ;
+    border: 1px solid #c32d80 ;
 }
 
 .return:hover {
-    border: 1px solid #c71585 ;
+    border: 1px solid #c32d80 ;
     background-color: #fff;
-    color: #c71585;
+    color: #c32d80;
     transition: 0.5s;
 }
 
