@@ -2,8 +2,8 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <!--meta name="viewport" content="width=device-width,initial-scale=1"-->
+    <!--meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"-->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>敏感肌・疾患肌</title>
     <link rel="stylesheet" href="desert_mostsensitive.css">
 
@@ -13,9 +13,8 @@
   </head>
   <body>
     <div class="anim-box"></div>
-  <img class = "imgicon" src='../ohada_logo.png' alt='画像' width=300px>
+    <img class = "imgicon" src='../ohada_logo.png' alt='画像' width=300px>
   <!--img class = "imgicon" src='../IMG_0362.PNG' alt='' width=300px-->
-  
   
   <div id="app">
     <div class="container">
@@ -60,6 +59,7 @@
             <div class="boxes">
             
             <h4 class="pageTitle">機能選択</h4>
+            結果 <span class="count">{{ filleredList.length }}件</span>
             <input type="checkbox" v-model="showSPFPA" name="cb" id="cb1" /><label for="cb1"> 日焼け止め効果あり</label>
             <input type="checkbox" v-model="showtuya" name="cb" id="cb2" /><label for="cb2"> つや</label>
             <input type="checkbox" v-model="showcover" name="cb" id="cb3" /><label for="cb3">カバー力重視</label>
@@ -73,6 +73,7 @@
             <div class="group">
             <div class="boxes">
                 <h4 class="pageTitle">各種テスト</h4>
+                結果 <span class="count">{{ filleredList.length }}件</span>
             <input type="checkbox" v-model="showallergy" name="cb" id="cb7" /><label for="cb7">アレルギーテスト<br>（アレルギー体質の人向け）</label>
             <input type="checkbox" v-model="showpatch" name="cb" id="cb8" /><label for="cb8">パッチテスト<br>（刺激に弱い人向け）</label>
             <input type="checkbox" v-model="showcomedo" name="cb" id="cb9" /><label for="cb9">ノンコメドジェニックテスト<br>（ニキビができやすい人向け）</label>
@@ -83,6 +84,7 @@
             <div class="group">
             <div class="boxes">
                 <h4 class="pageTitle">肌に合わない成分</h4>
+                結果 <span class="count">{{ filleredList.length }}件</span>
             <input type="checkbox" v-model="showchemical" name="cb" id="cb11" /><label for="cb11">紫外線吸収剤</label>
             <input type="checkbox" v-model="showalcohol" name="cb" id="cb12" /><label for="cb12">アルコール・エタノール</label>
             <input type="checkbox" v-model="showpetro" name="cb" id="cb13" /><label for="cb13">界面活性剤</label>
@@ -97,12 +99,14 @@
           
         </div>
       </div>
+      
       <div class="pagination">
         <button @click="prevPage" :disabled="currentPage === 1" class="Button-style">前へ</button>
         <span>{{ currentPage }} / {{ totalPages }}</span>
         <button @click="nextPage" :disabled="currentPage === totalPages" class="Button-style">次へ</button>
         結果 <span class="count">{{ filleredList.length }}件</span>
       </div>
+      <a class="return" href="desert_mostsensitive5.html">表示リセット</a><br>
       <!--商品一覧-->
  
         <tbody>
@@ -281,8 +285,8 @@
                 <td v-for="(product, index) in paginatedList" :key="product.id">
                     <p><a class="jyouhou" v-bind:href="product.officialURL" target="_blank"><span>公式URL</span></a></p>
                     <p><a class="jyouhou" v-bind:href="product.URL" target="_blank">購入先URL</a></p>
-                    <button class="Button-okini" v-if="!isFavorite(product)" @click="addToFavorites(product)">お気に入りに追加</button>
-                <button class="Button-okiniclose" v-else @click="removeFromFavorites(product)">お気に入りから削除</button>
+                    <button class="Button-okini" v-if="!isFavorite(product)" @click="addToFavorites(product)">比較追加</button>
+                <button class="Button-okiniclose" v-else @click="removeFromFavorites(product)">比較から削除</button>
                
                 </td>
               </tr>
@@ -302,10 +306,11 @@
           <span>{{ currentPage }} / {{ totalPages }}</span>
           <button @click="nextPage" :disabled="currentPage === totalPages" class="Button-style">次へ</button>
         </div>
+
         <!--h1 class="pageTitle"></h1>
         <h1 class="pageTitle"></h1-->
         <div class="line"></div>
-        <h1 class="spot">お気に入り一覧</h1>
+        <h1 class="spot">比較一覧</h1>
     <div class="line"></div>
      
     <tbody>
@@ -346,7 +351,7 @@
       <th style="white-space: nowrap;">機能</th>
       <td v-for="favorite in favorites" :key="favorite.id">
                 <div class = "kinou_flexbox">
-
+                    
                     <template v-if="favorite.cover">
                         <div class="kinou0">カバー力</div>
                     </template>
@@ -485,6 +490,9 @@
             <td v-for="favorite in favorites" :key="favorite.id">
                 <p><a class="jyouhou" v-bind:href="favorite.officialURL" target="_blank"><span>公式URL</span></a></p>
                 <p><a class="jyouhou" v-bind:href="favorite.URL" target="_blank">購入先URL</a></p>
+                <button class="Button-okiniclose" @click="removeFromFavorites(favorite)">比較から削除</button>
+
+                
 
            
             </td>
@@ -504,6 +512,7 @@
     
   
 </div>
+
 <a class="return" href="../index.html">肌質診断にもどる</a>
 <a class="return" href="../skintype_search.html">他の肌質も見たい方はこちら</a>
 
@@ -521,3 +530,12 @@
     
                 
                 
+                
+                
+                
+                
+
+
+
+
+
