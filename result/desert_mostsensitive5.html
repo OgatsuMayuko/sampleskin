@@ -63,7 +63,7 @@
             <input type="checkbox" v-model="showSPFPA" name="cb" id="cb1" /><label for="cb1"> 日焼け止め効果あり</label>
             <input type="checkbox" v-model="showtuya" name="cb" id="cb2" /><label for="cb2"> つや</label>
             <input type="checkbox" v-model="showcover" name="cb" id="cb3" /><label for="cb3">カバー力重視</label>
-            <input type="checkbox" v-model="showfaunda" name="cb" id="cb4" /><label for="cb4">ファンデーションを使わない日の化粧下地</label>
+            <input type="checkbox" v-model="showfaunda" name="cb" id="cb4" /><label for="cb4">ファンデーション代わりにしたい</label>
             <input type="checkbox" v-model="showtone" name="cb" id="cb5" /><label for="cb5"> トーンアップ効果あり</label>
             <input type="checkbox" v-model="showsoap" name="cb" id="cb6" /><label for="cb6">クレンジング不要の石鹸落ちコスメ</label>
 
@@ -147,7 +147,7 @@
             
           </tr>
           <th style="white-space: nowrap;">機能</th>
-                <td v-for="(product, index) in paginatedList" :key="product.id">
+                <td valign="top" v-for="(product, index) in paginatedList" :key="product.id">
                     <div class = "kinou_flexbox">
                         
                         <template v-if="product.cover">
@@ -246,7 +246,7 @@
               <tr>
                 <th style="white-space: nowrap;">説明</th>
                 
-                <td v-for="(product, index) in paginatedList" :key="product.id">
+                <td valign="top" v-for="(product, index) in paginatedList" :key="product.id">
                     <figcaption v-html="product.memo1">{{ product.memo1 }}</figcaption>
                 </td>
               </tr>
@@ -254,7 +254,7 @@
                 
                 <th style="white-space: nowrap;">補足</th>
                 
-                <td v-for="(product, index) in paginatedList" :key="product.id">
+                <td valign="top" v-for="(product, index) in paginatedList" :key="product.id">
                     <template v-if="product.memo2 && product.memo2.length > 0">
                         <div class="shigeki none">超敏感肌</div>
                     </template>
@@ -269,7 +269,7 @@
               </tr>
               <tr>
                 <th style="white-space: nowrap;">成分</th>
-                <td v-for="(product, index) in paginatedList" :key="product.id">
+                <td valign="top" v-for="(product, index) in paginatedList" :key="product.id">
                     <div class="readmore">
                         <input :id="'readmore-compo-' + product.id" type="checkbox" v-model="product.showDetails">
                         <label :for="'readmore-compo-' + product.id"></label>
@@ -349,7 +349,7 @@
         
       </tr>
       <th style="white-space: nowrap;">機能</th>
-      <td v-for="favorite in favorites" :key="favorite.id">
+      <td valign="top" v-for="favorite in favorites" :key="favorite.id">
                 <div class = "kinou_flexbox">
                     
                     <template v-if="favorite.cover">
@@ -448,7 +448,7 @@
           <tr>
             <th style="white-space: nowrap;">説明</th>
             
-            <td v-for="favorite in favorites" :key="favorite.id">
+            <td valign="top" v-for="favorite in favorites" :key="favorite.id">
                 <figcaption v-html="favorite.memo1">{{ favorite.memo1 }}</figcaption>
             </td>
           </tr>
@@ -456,7 +456,7 @@
             
             <th style="white-space: nowrap;">補足</th>
             
-            <td v-for="favorite in favorites" :key="favorite.id">
+            <td valign="top" v-for="favorite in favorites" :key="favorite.id">
                 <template v-if="favorite.memo2 && favorite.memo2.length > 0">
                     <div class="shigeki none">超敏感肌</div>
                 </template>
@@ -471,7 +471,7 @@
           </tr>
           <tr>
             <th style="white-space: nowrap;">成分</th>
-            <td v-for="favorite in favorites" :key="favorite.id">
+            <td valign="top" v-for="favorite in favorites" :key="favorite.id">
                 <div class="readmore">
                     <input :id="'readmore-compo-' + favorite.id" type="checkbox" v-model="favorite.showDetails">
                     
