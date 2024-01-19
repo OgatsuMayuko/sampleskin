@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 body {
-  /*overflow-x: hidden;*/
+  /*overflow-x: scroll;*/
   margin: 0;
     padding: 0;
   background-color: #ffffff;
@@ -291,6 +291,7 @@ input:checked + label {
   justify-content: space-between;
   align-items: flex-start; /* 修正：上寄せにする */
   text-align: left;
+ 
 }
 
 .list::after {
@@ -579,11 +580,11 @@ input:checked + label {
 }
 
 .readmore label::before {
-  content: '∨';
+  content: '↓';
 }
 
 .readmore input[type="checkbox"]:checked ~ label::before {
-  content: '∧';
+  content: '戻す';
 }
 
 .readmore input[type="checkbox"] {
