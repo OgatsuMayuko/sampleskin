@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <!--meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"-->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>化粧下地</title>
+    <link rel="stylesheet" href="desert_mostsensitive.css">
+
+   <script src="oil.js"></script>
+
+    
+  </head>
+  <body>
+    <div class="anim-box"></div>
+    <img class = "imgicon" src='../ohada_logo.png' alt='画像' width=300px>
+  <!--img class = "imgicon" src='../IMG_0362.PNG' alt='' width=300px-->
+  
+  <div id="app">
+    <div class="container">
+      <h5 class="spot">脂性肌向けの化粧下地</h5>
+    <div class="line"></div>
+      <!--h1 class="pageTitle">乾燥敏感肌・疾患肌向けの化粧下地</h1-->
+
+      <!--検索欄-->
+      <br>
+       <span>&nbsp;</span>
+      <div class="pagination">
+        <button @click="prevPage" :disabled="currentPage === 1" class="Button-style">前へ</button>
+        <span>{{ currentPage }} / {{ totalPages }}</span>
+        <button @click="nextPage" :disabled="currentPage === totalPages" class="Button-style">次へ</button>
+        結果 <span class="count">{{ filleredList.length }}件</span>
+      </div>
+      
+      <div class="search">
+        <!--div class="result">
+          結果 <span class="count">{{ filleredList.length }}件</span>
+        </div-->
+       <br>
+       <span>&nbsp;</span>
+        <div class="sort">
+            <div class="cp_ipselect cp_sl01">
+            <select id="sort" class="sorting" v-model.number="sortOrder" required>
+              <option value="1">おすすめ順</option>
+              <option value="2">価格の安い順</option>
+              <option value="3">価格の高い順</option>
+              <option value="4">コスパ順</option>
+           
+            </select>
+          </div>
+        </div>
+        <br>
+       <span>&nbsp;</span>
+          
+        <div class="condition">
+          <div class="target">
+            <div class="group">
+            
+            <div class="boxes">
+            
+            <h4 class="pageTitle">機能選択</h4>
+            結果 <span class="count">{{ filleredList.length }}件</span>
+            <input type="checkbox" v-model="showSPFPA" name="cb" id="cb1" /><label for="cb1"> 日焼け止め効果あり</label>
+            <input type="checkbox" v-model="showtuya" name="cb" id="cb2" /><label for="cb2"> つや</label>
+            <input type="checkbox" v-model="showcover" name="cb" id="cb3" /><label for="cb3">カバー力重視</label>
+            <input type="checkbox" v-model="showfaunda" name="cb" id="cb4" /><label for="cb4">ファンデーション代わりにしたい</label>
+            <input type="checkbox" v-model="showtone" name="cb" id="cb5" /><label for="cb5"> トーンアップ効果あり</label>
+            <input type="checkbox" v-model="showsoap" name="cb" id="cb6" /><label for="cb6">クレンジング不要の石鹸落ちコスメ</label>
+
+          </div>
+        </div>
+
+            <div class="group">
+            <div class="boxes">
+                <h4 class="pageTitle">各種テスト</h4>
+                結果 <span class="count">{{ filleredList.length }}件</span>
+            <input type="checkbox" v-model="showallergy" name="cb" id="cb7" /><label for="cb7">アレルギーテスト<br>（アレルギー体質の人向け）</label>
+            <input type="checkbox" v-model="showpatch" name="cb" id="cb8" /><label for="cb8">パッチテスト<br>（刺激に弱い人向け）</label>
+            <input type="checkbox" v-model="showcomedo" name="cb" id="cb9" /><label for="cb9">ノンコメドジェニックテスト<br>（ニキビができやすい人向け）</label>
+            <input type="checkbox" v-model="showstinging" name="cb" id="cb10" /><label for="cb10">スティンギングテスト<br>（超敏感肌人向け）</label>
+        </div>
+            </div>
+
+            <div class="group">
+            <div class="boxes">
+                <h4 class="pageTitle">肌に合わない成分</h4>
+                結果 <span class="count">{{ filleredList.length }}件</span>
+            <input type="checkbox" v-model="showchemical" name="cb" id="cb11" /><label for="cb11">紫外線吸収剤</label>
+            <input type="checkbox" v-model="showalcohol" name="cb" id="cb12" /><label for="cb12">アルコール・エタノール</label>
+            <input type="checkbox" v-model="showpetro" name="cb" id="cb13" /><label for="cb13">界面活性剤</label>
+            <input type="checkbox" v-model="showsynthe" name="cb" id="cb14" /><label for="cb14">香料</label>
+            <input type="checkbox" v-model="showparaben" name="cb" id="cb15" /><label for="cb15">パラベン</label>
+            <input type="checkbox" v-model="showmineral" name="cb" id="cb16" /><label for="cb16">鉱物油</label>
+            </div>
+        </div>
+            
+          </div>
+          
+          
+        </div>
+      </div>
+      
+      <div class="pagination">
+        <button @click="prevPage" :disabled="currentPage === 1" class="Button-style">前へ</button>
+        <span>{{ currentPage }} / {{ totalPages }}</span>
+        <button @click="nextPage" :disabled="currentPage === totalPages" class="Button-style">次へ</button>
+        結果 <span class="count">{{ filleredList.length }}件</span>
+      </div>
+      <a class="return" href="desert_mostsensitive5.html">表示リセット</a><br>
+      <!--商品一覧-->
+ 
+        <tbody>
+            <table class="list">
+                <table class="row">
+                <table class="item">
+                    <figure class="image">
+                        <div class = "kinou_flexbox">
+               
+            <tr>
+                <th  style="white-space: nowrap;">画像</th>
+          <td v-for="(product, index) in paginatedList" :key="product.id">
+            
+            <img v-bind:src="product.img"  alt="" style="max-width: 100%;">
+          </td>
+            
+           
+            
+          </td>
+        </tr>
+        <tr>
+            <th style="white-space: nowrap;">商品名</th>
+          <td v-for="(product, index) in paginatedList" :key="product.id">
+            <figcaption v-html="product.name">{{ product.name }}</figcaption>
+          </td>
+        </tr>
+        <tr>
+            <th style="white-space: nowrap;">メーカー</th>
+          <td v-for="(product, index) in paginatedList" :key="product.id">
+            <figcaption v-html="product.maker">{{ product.maker }}</figcaption>
+          </td>
+        </tr>
+        <tr>
+            <th style="white-space: nowrap;">ブランド</th>
+            <td v-for="(product, index) in paginatedList" :key="product.id">
+              <figcaption v-html="product.brand">{{ product.brand }}</figcaption>
+            </td>
+            
+          </tr>
+          <th style="white-space: nowrap;">機能</th>
+                <td valign="top" v-for="(product, index) in paginatedList" :key="product.id">
+                    <div class = "kinou_flexbox">
+                        
+                        <template v-if="product.cover">
+                            <div class="kinou0">カバー力</div>
+                        </template>
+                        <template v-if="product.faundation">
+                            <div class="kinou1">ノーファンデ</div>
+                        </template>
+                        <template v-if="product.toneup">
+                            <div class="kinou2">トーンアップ効果</div>
+                        </template>
+                        <template v-if="product.soap">
+                            <div class="kinou3">石鹸落ち</div>
+                        </template>
+                        
+                        
+                        
+                        <template v-if="product.allergytest">
+                            <div class="kinou4">アレルギーテスト</div>
+                            </template>
+                            <template v-if="product.patchtest">
+                            <div class="kinou5">パッチテスト</div>
+                            </template>
+                            
+                            <template v-if="product.noncomedogenictest">
+                            <div class="kinou6">ノンコメドジェニックテスト</div>
+                            </template>
+                            <template v-if="product.stingingtest">
+                            <div class="kinou7">スティンギングテスト</div>
+                            </template>
+
+                            <template v-if="product.nonchemicalprescription">
+                            <div class="kinou8">ノンケミカル処方</div>
+                            </template>
+                            <template v-if="product.alcoholfree">
+                            <div class="kinou9">アルコールフリー</div>
+                            </template>
+                            <template v-if="product.petroleumbasedsurfactantfree">
+                            <div class="kinou10">界面活性剤フリー</div>
+                            </template>
+                            <template v-if="product.syntheticfragrancefree">
+                            <div class="kinou11">香料フリー</div>
+                            </template>
+                            <template v-if="product.parabenfree">
+                            <div class="kinou12">パラベンフリー</div>
+                            </template>
+                            <template v-if="product.mineraloilfree">
+                            <div class="kinou13">鉱物油フリー</div>
+                            </template>
+                    </div>
+                </td>
+              </tr>
+           <div class="detail">
+            <tr>
+                <th style="white-space: nowrap;">価格</th>
+                <td v-for="(product, index) in paginatedList" :key="product.id">
+                    <div class="price"><span>{{ product.price | number_format }}</span>円</div>
+                </td>
+              </tr>
+              <tr>
+                <th style="white-space: nowrap;">容量</th>
+                <td v-for="(product, index) in paginatedList" :key="product.id">
+                  {{ product.gram | number_format }}g
+                </td>
+              </tr>
+              <tr>
+                <th style="white-space: nowrap;">円/g</th>
+                <td v-for="(product, index) in paginatedList" :key="product.id">
+                    {{ product.perprice | number_format }}円/1g
+                </td>
+              </tr>
+              <tr>
+                <th style="white-space: nowrap;">SPFPA</th>
+                <td v-for="(product, index) in paginatedList" :key="product.id">
+                    
+                    <template v-if="product.SPF > 0">
+                        
+                        SPF{{ product.SPF | number_format }}PA{{ product.PA | number_format }}
+                    </template>
+                </td>
+              </tr>
+              <tr>
+                <th style="white-space: nowrap;">仕上がり</th>
+                <td v-for="(product, index) in paginatedList" :key="product.id">
+                    <figcaption v-html="product.state">{{ product.state }}</figcaption>
+                </td>
+              </tr>
+              
+              <tr>
+                <th style="white-space: nowrap;">色展開</th>
+                <td v-for="(product, index) in paginatedList" :key="product.id">
+                    {{ product.color| number_format }}
+                </td>
+              </tr>
+              
+              <tr>
+                <th style="white-space: nowrap;">説明</th>
+                
+                <td valign="top" v-for="(product, index) in paginatedList" :key="product.id">
+                    <figcaption v-html="product.memo1">{{ product.memo1 }}</figcaption>
+                </td>
+              </tr>
+              <tr>
+                
+                <th style="white-space: nowrap;">補足</th>
+                
+                <td valign="top" v-for="(product, index) in paginatedList" :key="product.id">
+                    <template v-if="product.memo2 && product.memo2.length > 0">
+                        <div class="shigeki none">超敏感肌</div>
+                    </template>
+                    <!--div class="readmore">
+                       
+                        <input :id="'readmore-memo2-' + product.id" type="checkbox" v-model="product.showDetails">
+                        <label :for="'readmore-memo2-' + product.id"></label>
+                        <div class="readmore-content"-->
+                    <p><figcaption v-html="product.memo2">{{ product.memo2 }}</figcaption></p>
+                    
+                </td>
+              </tr>
+              <tr>
+                <th style="white-space: nowrap;">成分</th>
+                <td valign="top" v-for="(product, index) in paginatedList" :key="product.id">
+                    <div class="readmore">
+                        <input :id="'readmore-compo-' + product.id" type="checkbox" v-model="product.showDetails">
+                        <label :for="'readmore-compo-' + product.id"></label>
+                      <div class="readmore-content">
+                    <p><figcaption v-html="product.compo">{{ product.compo }}</figcaption></p>
+                  </div>
+                  </div>
+                </td>
+              </tr>
+             
+              <tr>
+                <th style="white-space: nowrap;">URL</th>
+                <td v-for="(product, index) in paginatedList" :key="product.id">
+                    <p><a class="jyouhou" v-bind:href="product.officialURL" target="_blank"><span>公式URL</span></a></p>
+                    <p><a class="jyouhou" v-bind:href="product.URL" target="_blank">購入先URL</a></p>
+                    <button class="Button-okini" v-if="!isFavorite(product)" @click="addToFavorites(product)">比較追加</button>
+                <button class="Button-okiniclose" v-else @click="removeFromFavorites(product)">比較から削除</button>
+               
+                </td>
+              </tr>
+              
+
+        </div>
+        
+        </div>
+       
+            </figure>
+            </tbody>
+        </table>
+        </table>
+        </table>
+        <div class="pagination">
+          <button @click="prevPage" :disabled="currentPage === 1" class="Button-style">前へ</button>
+          <span>{{ currentPage }} / {{ totalPages }}</span>
+          <button @click="nextPage" :disabled="currentPage === totalPages" class="Button-style">次へ</button>
+        </div>
+
+        <!--h1 class="pageTitle"></h1>
+        <h1 class="pageTitle"></h1-->
+        <div class="line"></div>
+        <h1 class="spot">比較一覧</h1>
+    <div class="line"></div>
+     
+    <tbody>
+        <table class="list">
+            <table class="row">
+            <table class="item">
+                <figure class="image">
+                    <div class = "kinou_flexbox">
+           
+        <tr>
+            <th  style="white-space: nowrap;">画像</th>
+      <td v-for="favorite in favorites" :key="favorite.id">
+        <img v-bind:src="favorite.img" alt="">
+        
+       
+        
+      </td>
+    </tr>
+    <tr>
+        <th style="white-space: nowrap;">商品名</th>
+        <td v-for="favorite in favorites" :key="favorite.id">
+        <figcaption v-html="favorite.name">{{ favorite.name }}</figcaption>
+      </td>
+    </tr>
+    <tr>
+        <th style="white-space: nowrap;">メーカー</th>
+        <td v-for="favorite in favorites" :key="favorite.id">
+        <figcaption v-html="favorite.maker">{{ favorite.maker }}</figcaption>
+      </td>
+    </tr>
+    <tr>
+        <th style="white-space: nowrap;">ブランド</th>
+        <td v-for="favorite in favorites" :key="favorite.id">
+          <figcaption v-html="favorite.brand">{{ favorite.brand }}</figcaption>
+        </td>
+        
+      </tr>
+      <th style="white-space: nowrap;">機能</th>
+      <td valign="top" v-for="favorite in favorites" :key="favorite.id">
+                <div class = "kinou_flexbox">
+                    
+                    <template v-if="favorite.cover">
+                        <div class="kinou0">カバー力</div>
+                    </template>
+                    <template v-if="favorite.faundation">
+                        <div class="kinou1">ノーファンデ</div>
+                    </template>
+                    <template v-if="favorite.toneup">
+                        <div class="kinou2">トーンアップ効果</div>
+                    </template>
+                    <template v-if="favorite.soap">
+                        <div class="kinou3">石鹸落ち</div>
+                    </template>
+                    
+                    
+                    
+                    <template v-if="favorite.allergytest">
+                        <div class="kinou4">アレルギーテスト</div>
+                        </template>
+                        <template v-if="favorite.patchtest">
+                        <div class="kinou5">パッチテスト</div>
+                        </template>
+                        
+                        <template v-if="favorite.noncomedogenictest">
+                        <div class="kinou6">ノンコメドジェニックテスト</div>
+                        </template>
+                        <template v-if="favorite.stingingtest">
+                        <div class="kinou7">スティンギングテスト</div>
+                        </template>
+
+                        <template v-if="favorite.nonchemicalprescription">
+                        <div class="kinou8">ノンケミカル処方</div>
+                        </template>
+                        <template v-if="favorite.alcoholfree">
+                        <div class="kinou9">アルコールフリー</div>
+                        </template>
+                        <template v-if="favorite.petroleumbasedsurfactantfree">
+                        <div class="kinou10">界面活性剤フリー</div>
+                        </template>
+                        <template v-if="favorite.syntheticfragrancefree">
+                        <div class="kinou11">香料フリー</div>
+                        </template>
+                        <template v-if="favorite.parabenfree">
+                        <div class="kinou12">パラベンフリー</div>
+                        </template>
+                        <template v-if="favorite.mineraloilfree">
+                        <div class="kinou13">鉱物油フリー</div>
+                        </template>
+                </div>
+            </td>
+          </tr>
+       <div class="detail">
+        <tr>
+            <th style="white-space: nowrap;">価格</th>
+            <td v-for="favorite in favorites" :key="favorite.id">
+                <div class="price"><span>{{ favorite.price | number_format }}</span>円</div>
+            </td>
+          </tr>
+          <tr>
+            <th style="white-space: nowrap;">容量</th>
+            <td v-for="favorite in favorites" :key="favorite.id">
+              {{ favorite.gram | number_format }}g
+            </td>
+          </tr>
+          <tr>
+            <th style="white-space: nowrap;">円/g</th>
+            <td v-for="favorite in favorites" :key="favorite.id">
+                {{ favorite.perprice | number_format }}円/1g
+            </td>
+          </tr>
+          <tr>
+            <th style="white-space: nowrap;">SPFPA</th>
+            <td v-for="favorite in favorites" :key="favorite.id">
+                
+                <template v-if="favorite.SPF > 0">
+                    
+                    SPF{{ favorite.SPF | number_format }}PA{{ favorite.PA | number_format }}
+                </template>
+            </td>
+          </tr>
+          <tr>
+            <th style="white-space: nowrap;">仕上がり</th>
+            <td v-for="favorite in favorites" :key="favorite.id">
+                <figcaption v-html="favorite.state">{{ favorite.state }}</figcaption>
+            </td>
+          </tr>
+          
+          <tr>
+            <th style="white-space: nowrap;">色展開</th>
+            <td v-for="favorite in favorites" :key="favorite.id">
+                {{favorite.color| number_format }}
+            </td>
+          </tr>
+          
+          <tr>
+            <th style="white-space: nowrap;">説明</th>
+            
+            <td valign="top" v-for="favorite in favorites" :key="favorite.id">
+                <figcaption v-html="favorite.memo1">{{ favorite.memo1 }}</figcaption>
+            </td>
+          </tr>
+          <tr>
+            
+            <th style="white-space: nowrap;">補足</th>
+            
+            <td valign="top" v-for="favorite in favorites" :key="favorite.id">
+                <template v-if="favorite.memo2 && favorite.memo2.length > 0">
+                    <div class="shigeki none">超敏感肌</div>
+                </template>
+                <!--div class="readmore">
+                    
+                    <input :id="'readmore-memo2-' + favorite.id" type="checkbox" v-model="favorite.showDetails">
+                    <label :for="'readmore-memo2-' + favorite.id"></label>
+                    <div class="readmore-content"-->
+                <p><figcaption v-html="favorite.memo2">{{ favorite.memo2 }}</figcaption></p>
+                
+            </td>
+          </tr>
+          <tr>
+            <th style="white-space: nowrap;">成分</th>
+            <td valign="top" v-for="favorite in favorites" :key="favorite.id">
+                <div class="readmore">
+                    <input :id="'readmore-compo-' + favorite.id" type="checkbox" v-model="favorite.showDetails">
+                    
+                    <label :for="'readmore-compo-' + favorite.id"></label>
+                    <!--button @click="showDetails(product)">詳細を表示</button-->
+                  <div class="readmore-content">
+                <p><figcaption v-html="favorite.compo">{{ favorite.compo }}</figcaption></p>
+              </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            
+        
+            <th style="white-space: nowrap;">URL</th>
+            <td v-for="favorite in favorites" :key="favorite.id">
+                <p><a class="jyouhou" v-bind:href="favorite.officialURL" target="_blank"><span>公式URL</span></a></p>
+                <p><a class="jyouhou" v-bind:href="favorite.URL" target="_blank">購入先URL</a></p>
+                <button class="Button-okiniclose" @click="removeFromFavorites(favorite)">比較から削除</button>
+
+                
+
+           
+            </td>
+          </tr>
+          
+
+    </div>
+    
+    </div>
+   
+        </figure>
+        
+    </table>
+    </table>
+    </table>
+</tbody>
+    
+  
+</div>
+
+<a class="return" href="../index.html">肌質診断にもどる</a>
+<a class="return" href="../skintype_search.html">他の肌質も見たい方はこちら</a>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/2.8.1/vue-router.js"></script>
+  <script src="oil.js"></script>
+  <!--<script  type="module" src="desert_mostsensitive.js"></script>-->
+
+
+  </body>
+ 
+</html>
+    
+                
+                
+                
+                
+                
+                
+
+
+
+
+
